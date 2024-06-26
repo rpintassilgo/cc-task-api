@@ -15,7 +15,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(authenticate);
-app.use('/task-api/tasks', taskRoutes);
+app.use('/tasks', taskRoutes);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
