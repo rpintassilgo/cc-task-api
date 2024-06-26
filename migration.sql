@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS tasks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id VARCHAR(255) NOT NULL,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    status ENUM('TD', 'IP', 'D') DEFAULT 'TD',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
