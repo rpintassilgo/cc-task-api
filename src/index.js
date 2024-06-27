@@ -7,7 +7,7 @@ const authenticate = require('./middleware/auth');
 
 
 const corsOptions = {
-  origin: process.env.MAIN_API_ORIGIN_URL,
+  origin: `${window.location.origin}`,
   optionsSuccessStatus: 200,
   allowedHeaders: ['Content-Type', 'Authorization', 'x-api-key'],
 };
@@ -15,7 +15,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(authenticate);
-app.use('/tasks', taskRoutes);
+app.use('/task-api/tasks', taskRoutes);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
